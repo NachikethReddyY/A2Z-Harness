@@ -9,8 +9,7 @@ import {
 	SidebarProvider,
 } from "#/components/shadcn/sidebar";
 
-export default function CSidebar() {
-	// { children }: { children: React.ReactNode }
+export default function CSidebar({ children }: { children?: React.ReactNode }) {
 
 	return (
 		// Wraps the sidebat Component
@@ -41,9 +40,10 @@ export default function CSidebar() {
 						<SidebarMenuItem>
 							<SidebarMenuButton>Username</SidebarMenuButton>
 						</SidebarMenuItem>
-					</SidebarMenu>
-				</SidebarFooter>
-			</Sidebar>
-		</SidebarProvider>
+							</SidebarMenu>
+						</SidebarFooter>
+					</Sidebar>
+					{children}
+				</SidebarProvider>
 	);
 }
